@@ -8,7 +8,6 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { OrderModel } from './order.model';
 import { UserRoleModel } from './user-role.model';
 
 @Entity({
@@ -74,7 +73,4 @@ export class UserModel {
 
   @OneToMany(() => UserRoleModel, (userRole) => userRole.user)
   userRoles: UserRoleModel[];
-
-  @OneToMany(() => OrderModel, (order) => order.user)
-  orders: OrderModel[];
 }
